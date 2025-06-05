@@ -1,5 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoIncidencia } from "./tipo-incidencia";
+import { EstadoIncidencia } from "./estado-incidencia";
 
 @Entity('incidencias')
 export class Incidencia {
@@ -18,8 +19,9 @@ export class Incidencia {
     @Column({name: 'descripcion'})
     descripcion: string;
 
-    @Column({name: 'estado'})
-    estado: string;
+    @ManyToOne(() => EstadoIncidencia, (estadoIncidencia) => estadoIncidencia.idEstadoIncidencia)
+    @JoinColumn({ name: 'id_estado_incidencia' })
+    estadoIncidencia: EstadoIncidencia;
 
     @Column({name: 'fecha_hora_reporte'})
     fechaHoraReporte: Date;

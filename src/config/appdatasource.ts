@@ -2,6 +2,7 @@ import 'dotenv/config';
 import { DataSource } from "typeorm";
 import { Incidencia } from "../entities/incidencia";
 import { TipoIncidencia } from "../entities/tipo-incidencia";
+import { EstadoIncidencia } from '../entities/estado-incidencia';
 
 const AppDataSource = new DataSource({
     type: process.env.DB_TYPE as any || 'postgres',
@@ -13,6 +14,7 @@ const AppDataSource = new DataSource({
     entities: [
         Incidencia,
         TipoIncidencia,
+        EstadoIncidencia,
     ]
 });
 
