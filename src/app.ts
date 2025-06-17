@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import incidenciaRouter from './routes/incidencia.route';
+import tipoIncidenciaRouter from './routes/tipo-incidencia.route';
 import AppDataSource from './config/appdatasource';
 
 
@@ -7,6 +8,7 @@ const app: Application = express();
 
 app.use(express.json());
 app.use('/api/v1/incidencias', incidenciaRouter);
+app.use('/api/v1/tipo-incidencias', tipoIncidenciaRouter);
 
 export const startServer = async () => {
     try {
