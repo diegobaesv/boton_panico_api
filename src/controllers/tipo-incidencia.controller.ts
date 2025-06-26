@@ -5,7 +5,8 @@ import { Request, Response } from "express";
 
 export const listarTipoIncidencias = async (req: Request, res: Response) => {
     try {
-        const tipoIncidencias = await tipoIncidenciaService.listarTipoIncidencias();
+        const { flagBoton} = req.query;
+        const tipoIncidencias = await tipoIncidenciaService.listarTipoIncidencias(flagBoton as string);
         res.json(BaseResponse.success(tipoIncidencias));
     } catch (error) {
         console.error(error);
