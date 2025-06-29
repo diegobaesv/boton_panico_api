@@ -3,6 +3,8 @@ import { DataSource } from "typeorm";
 import { Incidencia } from "../entities/incidencia";
 import { TipoIncidencia } from "../entities/tipo-incidencia";
 import { EstadoIncidencia } from '../entities/estado-incidencia';
+import { Rol } from '../entities/rol';
+import { Usuario } from '../entities/usuario';
 
 const AppDataSource = new DataSource({
     type: process.env.DB_TYPE as any || 'postgres',
@@ -15,6 +17,8 @@ const AppDataSource = new DataSource({
         Incidencia,
         TipoIncidencia,
         EstadoIncidencia,
+        Rol,
+        Usuario,
     ]
 });
 

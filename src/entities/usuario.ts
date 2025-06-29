@@ -22,10 +22,10 @@ export class Usuario {
     @Column({ name: 'nombres' })
     nombres: string;
 
-    @Column({ name: 'apellidoPaterno' })
+    @Column({ name: 'apellido_paterno' })
     apellidoPaterno: string;
 
-    @Column({ name: 'apellidoMaterno' })
+    @Column({ name: 'apellido_materno' })
     apellidoMaterno: string;
 
     @Column({ name: 'correo' })
