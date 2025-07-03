@@ -18,6 +18,7 @@ export const obtenerUsuarioPorDocumentoYRol = async (numeroDocumento: string, id
                 idRol: idRol
             },
             estadoAuditoria: EstadoAuditoria.ACTIVO
-        }
+        },
+        relations: ['rol']
     });
 }
