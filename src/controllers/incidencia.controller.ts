@@ -14,3 +14,13 @@ export const insertarIncidencia = async (req: Request, res: Response) => {
         res.status(500).json(BaseResponse.error(error.message));
     }
 }
+
+export const listarIncidencias = async (req: Request, res: Response) => {
+    try {
+        const incidencias = await incidenciaService.listarIncidencias();
+        res.json(BaseResponse.success(incidencias));
+    } catch (error) {
+        console.error(error);
+        res.status(500).json(BaseResponse.error(error.message));
+    }
+}
